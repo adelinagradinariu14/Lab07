@@ -37,8 +37,12 @@ class View:
 
         # --- Sezione 2: Filtraggio ---
         # TODO
-        self.dd_biblioteca = ft.Dropdown(label="Biblioteca", width = 450, on_select= self.controller.handle_dd_biblioteca)
-        self.dd_genere = ft.Dropdown(label="Genere", width=300, on_select=self.controller.handle_dd_genere)
+        self.dd_biblioteca = ft.Dropdown(label="Biblioteca",
+                                         width = 450,
+                                         on_select= self.controller.handle_dd_biblioteca)
+        self.dd_genere = ft.Dropdown(label="Genere",
+                                     width=300,
+                                     on_select=self.controller.handle_dd_genere)
 
         # Sezione 3: Libri
         # TODO
@@ -72,6 +76,9 @@ class View:
 
         self.page.scroll = "adaptive"
         self.page.update()
+
+        # !!!! Va chiamato per ultimo: i dropdown devono già esistere ed essere sulla pagina !!!!
+        self.controller.popola_dropdown()
 
     def cambia_tema(self, e):
         """ Cambia tema scuro/chiaro """
